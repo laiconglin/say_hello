@@ -8,9 +8,9 @@
     <script src="jquery.mobile-1.3.1.js"></script>  
 </head>
 <body>
-<div data-role="page" id="login_in" data-title="存储东西的容器 - 登录">
+<div data-role="page" id="login_in" data-title="评评灌灌 - 登录">
     <div data-role="header" data-theme="c">
-        <h2>存储东西的容器 - 登录</h2>
+        <h2>评评灌灌 - 登录</h2>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div>
     <div data-role="content">

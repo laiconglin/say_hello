@@ -9,9 +9,9 @@
      
 </head>
 <body>
-<div data-role="page" id="index_page" data-theme="d" data-title="存储东西的容器">
+<div data-role="page" id="index_page" data-theme="d" data-title="评评灌灌">
     <div data-role="header" data-theme="c">
-        <h2>存储东西的容器</h2>
+        <h2>评评灌灌</h2>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
     <div data-role="content">

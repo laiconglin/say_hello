@@ -8,7 +8,7 @@
     <script src="jquery.mobile-1.3.1.js"></script>  
 </head>
 <body>
-<div data-role="page" id="write_something" data-title="存储东西的容器">
+<div data-role="page" id="write_something" data-title="评评灌灌">
     <div data-role="header" id="write_something_header" data-theme="c">
         <h4>写点东西吧，少年</h4>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>

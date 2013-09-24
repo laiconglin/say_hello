@@ -27,9 +27,9 @@ if(isset($_POST['content'])) {
     
 </head>
 <body>
-<div data-role="page" id="posted_something" data-theme="d" data-title="存储东西的容器">
+<div data-role="page" id="posted_something" data-theme="d" data-title="评评灌灌">
     <div data-role="header" data-theme="c">
-        <h2>存储东西的容器 - 发表成功</h2>
+        <h2>评评灌灌 - 发表成功</h2>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
 
