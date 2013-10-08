@@ -1,3 +1,7 @@
+<?php
+require_once('check_login.php');
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -6,7 +10,15 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-     
+    <script src="utils.js"></script>
+    <script>
+    $(document).ready(function(){
+        console.log("hello world");
+        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_lai.png");
+        $("div#top_user_name").text("lai");
+    });
+
+    </script>
 </head>
 <body>
 <div data-role="page" id="index_page" data-theme="d" data-title="评评灌灌">
@@ -20,12 +32,11 @@
         </div><!-- /article -->
     </div><!-- /content -->
     <div data-role="panel" id="left-panel" data-theme="c">
-          <ul data-role="listview">
-            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+        <ul data-role="listview">
+            <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="#" data-rel="close">首页</a></li>
-            <li><a href="/say_hello/login.php">登录</a></li>
             <li><a href="/say_hello/write_something.php">写点东西</a></li>
-          </ul>
+        </ul>
     </div><!-- /panel -->
     <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="c">
         <ul data-role="listview" data-theme="d" data-icon="false">

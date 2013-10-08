@@ -6,6 +6,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
+    <script src="utils.js"></script>
+    <script>
+        $(document).ready(function(){
+            var username=getCookie("username");
+            if (username!=null && username!=""){
+                //alert("Welcome again " + username);
+                $("input#username").attr("value",username);
+            } 
+        });
+    </script>
 </head>
 <body>
 <div data-role="page" id="login_in" data-title="评评灌灌 - 登录">
@@ -14,10 +24,10 @@
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div>
     <div data-role="content">
-        <form id="contents" action="post_form_test.php" method="post">
+        <form id="contents" action="index.php" method="post">
             <label for="name">用户名:</label>
-            <input type="text" name="name" id="text-basic" value="">
-            <label for="password-1">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+            <input type="text" name="username" id="username" value="">
+            <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
             <input type="password" data-clear-btn="false" name="password" id="password-1" value="" autocomplete="off">
             <input type="submit" value="登录" data-iconpos="right" data-mini="true" data-theme="e">
         </form>

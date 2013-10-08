@@ -1,3 +1,6 @@
+<?php
+require_once('check_login.php');
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -28,7 +31,6 @@
           <ul data-role="listview">
             <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
             <li><a href="/say_hello/index.php">首页</a></li>
-            <li><a href="/say_hello/login.php">登录</a></li>
             <li><a href="#" data-rel="close">写点东西</a></li>
           </ul>
     </div><!-- /panel -->
