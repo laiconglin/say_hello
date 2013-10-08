@@ -13,9 +13,10 @@ require_once('check_login.php');
     <script src="utils.js"></script>
     <script>
     $(document).ready(function(){
+        var user_name = getCookie("say_hello_username");
         console.log("hello world");
-        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_lai.png");
-        $("div#top_user_name").text("lai");
+        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
+        $("div#top_user_name").text(user_name);
     });
 
     </script>
@@ -36,6 +37,7 @@ require_once('check_login.php');
             <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="#" data-rel="close">首页</a></li>
             <li><a href="/say_hello/write_something.php">写点东西</a></li>
+            <li><a href="/say_hello/logout.php">退出</a></li>
         </ul>
     </div><!-- /panel -->
     <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="c">

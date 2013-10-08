@@ -13,14 +13,17 @@ if (isset($_POST['username']) && isset($_POST['password']) && !isset($_COOKIE["s
     }
 }
 
+if(isset($_COOKIE["say_hello_username"])) {
+    $_SESSION['username'] = $_COOKIE["say_hello_username"];
+}
 
 if (isset($_SESSION['username'])) {
     if(!isset($_COOKIE["say_hello_username"])) {
-        setcookie("say_hello_username",$value, time()+3600*24*7);
+        setcookie("say_hello_username",$_SESSION['username'], time()+3600*24*7);
     }
     else {
         if($_SESSION['username'] != $_COOKIE["say_hello_username"]) {
-            setcookie("say_hello_username",$value, time()+3600*24*7);
+            setcookie("say_hello_username", $_SESSION['username'], time()+3600*24*7);
         }
     }
     $navbar = 1;
