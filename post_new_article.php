@@ -10,21 +10,22 @@ if(isset($_POST['date'])) {
     $new_date = $_POST['date'];
     //echo $new_date."<br/>";
 }
-$new_content = "I am the content!";
+$new_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium perspiciatis unde omnis iste natus error sit voluptatem accusantiumdoloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
 if(isset($_POST['content'])) {
     $new_content = $_POST['content'];
     //echo $new_content."<br/>";
 }
+$new_publish_info = "Post By lai on sunday,March 05,2013";
 ?>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+    <script src="jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-    
+    <link rel="stylesheet" href="css/style.css" /> 
 </head>
 <body>
 <div data-role="page" id="posted_something" data-theme="d" data-title="评评灌灌">
@@ -33,11 +34,12 @@ if(isset($_POST['content'])) {
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
 
-    <div data-role="content">
-        <div class="article">
-            <h4><?php echo $new_title; ?> </h4>
+    <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
+        <div class="article article-content">
+            <h3 style="text-align:center;"><?php echo $new_title; ?> </h3>
+            <p class="article-ul-li-span"><?php echo $new_publish_info; ?> </p>
             <p> <?php echo $new_content; ?></p>
-            <p> <?php echo exec("whoami");?></p>
+            <img src="/say_hello/images/article/article_1.png" />
             <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
         </div><!-- /article -->
     </div><!-- /content -->

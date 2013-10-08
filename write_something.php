@@ -6,9 +6,10 @@ require_once('check_login.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+    <script src="jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
+    <link rel="stylesheet" href="css/style.css" /> 
 </head>
 <body>
 <div data-role="page" id="write_something" data-title="评评灌灌">
@@ -16,8 +17,8 @@ require_once('check_login.php');
         <h4>写点东西吧，少年</h4>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
-    <div data-role="content" id="write_something_header" data-theme="c">
-        <div class="article">
+    <div data-role="content" id="write_something_header" data-theme="c" style="background:#46463C url(/say_hello/images/bg.png);">
+        <div class="article article-content">
             <form id="contents" action="post_new_article.php" method="post">
                 <label for="title">标题:</label>
                 <input type="text" name="title" id="text-basic" value="">

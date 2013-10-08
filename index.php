@@ -7,10 +7,11 @@ require_once('check_login.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+    <script src="jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
     <script src="utils.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
     $(document).ready(function(){
         var user_name = getCookie("say_hello_username");
@@ -27,8 +28,9 @@ require_once('check_login.php');
         <h2>评评灌灌</h2>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
-    <div data-role="content">
-        <div class="article">
+    <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
+        <div class="article article-content">
+            <p> Say Hello</p>
             <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
         </div><!-- /article -->
     </div><!-- /content -->
