@@ -37,6 +37,7 @@ function insert_new_article($title, $content, $author, $theme){
         $dbh = getDBHandle();
         /*** set the error reporting attribute ***/
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->query('set names utf8;');
         $stmt = $dbh->prepare('insert into articles (`id`, `title`, `content`, `author_name`, `create_time`, `theme`) values (NULL, :title, :content, :author, CURRENT_TIMESTAMP, :theme)');
         $stmt->bindParam(':title',   $title);
         $stmt->bindParam(':content', $content);
@@ -77,5 +78,23 @@ function select_article_by_id($id) {
     return $result;
 }
 
+function select_articles() {
+    $result = array();
+    try{
+        $dbh = getDBHandle();
+        /*** set the error reporting attribute ***/
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->query('set names utf8;');
+        $stmt = $dbh->prepare("SELECT id, title, author_name, create_time FROM articles order by create_time desc");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+    } 
+    catch(PDOException $e) {
+        echo $e->getMessage();
+        return 0;
+    }
+
+    return $result;
+}
 
 ?>

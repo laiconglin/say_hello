@@ -1,10 +1,16 @@
 <?php
 require_once('check_login.php');
-$all_articles = select_articles();
-
+if(isset($_GET['article_id'])){
+    $article = select_article_by_id($_GET['article_id']);
+}
+$title = $article['title'];
+$content = $article['content'];
+$author = $article['author_name'];;
+$create_date = $article['create_time'];
+$theme = $article['theme'];
+$publish_info = "Post By ".$author." on ".$create_date;
 
 ?>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -13,8 +19,7 @@ $all_articles = select_articles();
     <script src="jquery.min.js">
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-    <script src="utils.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" /> 
     <script>
     $(document).ready(function(){
         var user_name = getCookie("say_hello_username");
@@ -26,45 +31,28 @@ $all_articles = select_articles();
     </script>
 </head>
 <body>
-<div data-role="page" id="index_page" data-theme="d" data-title="评评灌灌">
+<div data-role="page" id="posted_something" data-theme="d" data-title="评评灌灌">
     <div data-role="header" data-theme="c">
         <h2>评评灌灌</h2>
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
     </div><!-- /header -->
-    <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
-<?php
-    foreach($all_articles as $article){
-        //echo "<pre>";
-        //print_r($article);
-        //echo "</pre>";
-        $article_id = $article['id'];
-        $title = $article['title'];
-        $author = $article['author_name'];;
-        $create_date = $article['create_time'];
-        $publish_info = "Post By ".$author." on ".$create_date;
-        echo "<div class='article article-content'>";
-        echo "<ul data-role='listview' data-inset='true'>";
-        echo "<li>";
-        echo "<a href=\"/say_hello/show_article.php?article_id=$article_id\">";
-        echo "<h3> $title</h3>";
-        echo "<p class=\"article-ul-li-span\"> $publish_info</p>";
-        echo "</a>";
-        echo "</ul>";
-        echo "</div>";
-    }
-?>
 
+    <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
         <div class="article article-content">
+            <h3 style="text-align:center;"><?php echo $title; ?> </h3>
+            <p class="article-ul-li-span"><?php echo $publish_info; ?> </p>
+            <div class="article-content-html"> <?php echo $content; ?></div>
+            <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
         </div><!-- /article -->
-        <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
     </div><!-- /content -->
+
     <div data-role="panel" id="left-panel" data-theme="c">
-        <ul data-role="listview">
+          <ul data-role="listview">
             <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="/say_hello/index.php">首页</a></li>
             <li><a href="/say_hello/write_something.php">写点东西</a></li>
             <li><a href="/say_hello/logout.php">退出</a></li>
-        </ul>
+          </ul>
     </div><!-- /panel -->
     <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="c">
         <ul data-role="listview" data-theme="d" data-icon="false">
@@ -79,7 +67,6 @@ $all_articles = select_articles();
     <div data-role="footer" data-theme="c">
         <p>Copyright &copy; 2013 Conglin Lai</p>
     </div>
-</div>
-
+</div><!--page-->
 </body>
 </html>
