@@ -4,6 +4,7 @@ body{
 	background:#46463C url(/say_hello/images/bg.png);
 	border-top: 7px outset #ea4c89;
 }
+p:first-letter { margin-left:2em; }
 /*end reset*/
 /*----content----*/
 .article-content{
