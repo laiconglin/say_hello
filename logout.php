@@ -5,5 +5,5 @@ if(isset($_SESSION['username'])) {
     unset($_SESSION['username']);
 }
 echo $_SESSION['username'];
-header('/say_hello/login.php');
+redirect('/say_hello/login.php');
 ?>
