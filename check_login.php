@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('tools.php');
 require_once('db_query.php');
 if (isset($_POST['username']) && isset($_POST['password']) && !isset($_COOKIE["say_hello_username"])) {
     $username = $_POST['username'];
@@ -7,7 +8,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && !isset($_COOKIE["s
     $authed = auth($username, $password);
 
     if (!$authed) {
-        header('Location: /say_hello/login.php?error='.$authed);
+        redirect('/say_hello/login.php?error='.$authed);
     } else {
         $_SESSION['username'] = $username;
     }
@@ -29,6 +30,6 @@ if (isset($_SESSION['username'])) {
     $navbar = 1;
     $logindisplay = 0;
 } else {
-    header ('Location: /say_hello/login.php');
+    redirect('/say_hello/login.php');
 }
 ?>

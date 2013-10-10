@@ -1,8 +1,6 @@
 <?php
 require_once('check_login.php');
 $all_articles = select_articles();
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,19 +8,27 @@ $all_articles = select_articles();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
-    <script src="jquery.min.js">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
-    <script src="jquery.mobile-1.3.1.js"></script>  
     <script src="utils.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
     <script>
+        $(document).bind("mobileinit", function () {
+            console.log("hello world mobileinit");
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="jquery.mobile-1.3.1.js"></script>  
+    <script>
+    $('#index_page').bind('pageinit',function(event){
+        alert( 'This page was just enhanced by jQuery Mobile!' );
+    });
     $(document).ready(function(){
+        console.log("hello world jqm");
         var user_name = getCookie("say_hello_username");
-        console.log("hello world");
         $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
         $("div#top_user_name").text(user_name);
     });
-
     </script>
 </head>
 <body>
@@ -58,7 +64,7 @@ $all_articles = select_articles();
         </div><!-- /article -->
         <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
     </div><!-- /content -->
-    <div data-role="panel" id="left-panel" data-theme="c">
+    <div data-role="panel" id="left-panel" data-theme="c" data-ajax="false">
         <ul data-role="listview">
             <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="/say_hello/index.php">首页</a></li>

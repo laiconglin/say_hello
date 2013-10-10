@@ -8,7 +8,6 @@ function getDBHandle(){
         $dbpassword = $GLOBALS['dbpassword'];
         $dbh = new PDO("mysql:host=$hostname;dbname=$dbname", $dbuser, $dbpassword);
         /*** echo a message saying we have connected ***/
-        //echo 'Connected to database';
     }
     catch(PDOException $e){
         echo $e->getMessage();
@@ -67,7 +66,6 @@ function select_article_by_id($id) {
     } 
     catch(PDOException $e) {
         echo $e->getMessage();
-        return 0;
     }
 
     $result['title'] = $row['title'];
@@ -96,5 +94,4 @@ function select_articles() {
 
     return $result;
 }
-
 ?>
