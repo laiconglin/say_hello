@@ -7,7 +7,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && !isset($_COOKIE["s
     $password = $_POST['password'];
     $authed = auth($username, $password);
 
-    if (!$authed) {
+    if ($authed == 0) {
         redirect('/say_hello/login.php?error='.$authed);
     } else {
         $_SESSION['username'] = $username;
