@@ -37,9 +37,10 @@ require_once('check_login.php');
     </div><!-- /content -->
     <div data-role="panel" id="left-panel" data-theme="c">
           <ul data-role="listview">
-            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="/say_hello/index.php">首页</a></li>
-            <li><a href="#" data-rel="close">写点东西</a></li>
+            <li><a href="#">写点东西</a></li>
+            <li><a href="/say_hello/logout.php">退出</a></li>
           </ul>
     </div><!-- /panel -->
     <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="c">

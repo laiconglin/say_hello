@@ -67,7 +67,7 @@ $all_articles = select_articles();
     <div data-role="panel" id="left-panel" data-theme="c" data-ajax="false">
         <ul data-role="listview">
             <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
-            <li><a href="/say_hello/index.php">首页</a></li>
+            <li><a href="#">首页</a></li>
             <li><a href="/say_hello/write_something.php">写点东西</a></li>
             <li><a href="/say_hello/logout.php">退出</a></li>
         </ul>
