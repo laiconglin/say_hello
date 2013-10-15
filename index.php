@@ -7,7 +7,7 @@ $all_articles = select_articles();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
     <script src="utils.js"></script>
@@ -18,7 +18,7 @@ $all_articles = select_articles();
             $.mobile.ajaxEnabled = false;
         });
     </script>
-    <script src="jquery.mobile-1.3.1.js"></script>  
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>  
     <script>
     $(document).on("pageinit", "#index_page", function( event ) {
         console.log( "This page was just enhanced by jQuery Mobile!" );

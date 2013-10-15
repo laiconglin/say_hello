@@ -6,7 +6,7 @@ require_once('check_login.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
     <script src="utils.js"></script>
@@ -17,7 +17,7 @@ require_once('check_login.php');
             $.mobile.ajaxEnabled = false;
         });
     </script>
-    <script src="jquery.mobile-1.3.1.js"></script>  
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>  
     <script>
     $(document).ready(function(){
         console.log("hello world jqm");
