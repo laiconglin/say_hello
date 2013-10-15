@@ -9,6 +9,8 @@ require_once('check_login.php');
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+    <script src="utils.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
         $(document).bind("mobileinit", function () {
             console.log("hello world mobileinit");
@@ -16,7 +18,14 @@ require_once('check_login.php');
         });
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-    <link rel="stylesheet" href="css/style.css" /> 
+    <script>
+    $(document).ready(function(){
+        console.log("hello world jqm");
+        var user_name = getCookie("say_hello_username");
+        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
+        $("div#top_user_name").text(user_name);
+    });
+    </script>
 </head>
 <body>
 <div data-role="page" id="write_something" data-title="评评灌灌">

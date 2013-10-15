@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+    <script src="utils.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
         $(document).bind("mobileinit", function () {
             console.log("hello world mobileinit");
@@ -12,8 +14,6 @@
         });
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-    <script src="utils.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
     <script>
         $(document).ready(function(){
             var username=getCookie("username");

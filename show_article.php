@@ -18,6 +18,8 @@ $publish_info = "Post By ".$author." on ".$create_date;
     <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
+    <script src="utils.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
         $(document).bind("mobileinit", function () {
             console.log("hello world mobileinit");
@@ -25,8 +27,6 @@ $publish_info = "Post By ".$author." on ".$create_date;
         });
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
-    <link rel="stylesheet" href="css/style.css" /> 
-    <script src="utils.js"></script>
     <script>
     $(document).ready(function(){
         var user_name = getCookie("say_hello_username");

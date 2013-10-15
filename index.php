@@ -11,18 +11,15 @@ $all_articles = select_articles();
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
     <script src="utils.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <script>
         $(document).bind("mobileinit", function () {
             console.log("hello world mobileinit");
             $.mobile.ajaxEnabled = false;
         });
     </script>
-    <link rel="stylesheet" href="css/style.css" />
     <script src="jquery.mobile-1.3.1.js"></script>  
     <script>
-    $('#index_page').bind('pageinit',function(event){
-        alert( 'This page was just enhanced by jQuery Mobile!' );
-    });
     $(document).ready(function(){
         console.log("hello world jqm");
         var user_name = getCookie("say_hello_username");
