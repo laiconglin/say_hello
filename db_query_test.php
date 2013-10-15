@@ -5,8 +5,7 @@ require_once('db_query.php');
 //echo insert_new_article("hello", "fafadsfasdfadsf", "lai", ""); 
 //
 echo "<pre>";
-print_r(auth("Lai","231711"));
-
+echo update_article_by_id(14, "hello", "update it");
 echo "</pre>";
 ?>
 

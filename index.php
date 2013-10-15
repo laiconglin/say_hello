@@ -20,6 +20,9 @@ $all_articles = select_articles();
     </script>
     <script src="jquery.mobile-1.3.1.js"></script>  
     <script>
+    $(document).on("pageinit", "#index_page", function( event ) {
+        console.log( "This page was just enhanced by jQuery Mobile!" );
+    });
     $(document).ready(function(){
         console.log("hello world jqm");
         var user_name = getCookie("say_hello_username");

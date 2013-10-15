@@ -39,7 +39,7 @@ require_once('check_login.php');
                 <label for="title">标题:</label>
                 <input type="text" name="title" id="text-basic" value="">
                 <label for="content">正文:</label>
-                <textarea cols="40" rows="60" name="content" id="content_textarea" style="height:200;"></textarea>
+                <textarea name="content" id="content_textarea" style="height:160px;"></textarea>
                 <input type="submit" value="提交" data-iconpos="right" data-mini="true" data-theme="e">
             </form>
         </div><!-- /article -->

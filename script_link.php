@@ -1,1 +1,0 @@
-<html><head><script type="text/javascript">window.location.href="http://localhost/say_hello/login.php";</script><noscript><meta http-equiv="refresh" content="0;url=http://localhost/say_hello/login.php" /></noscript></head></html>

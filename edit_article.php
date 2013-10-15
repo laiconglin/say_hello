@@ -8,7 +8,7 @@ if(isset($_GET['article_id'])){
     $create_date = $article['create_time'];
     $theme = $article['theme'];
     $publish_info = "Post By ".$author." on ".$create_date;
-    $edit_article_url = "/say_hello/edit_article.php?article_id=".$_GET['article_id'];
+    $show_article_url = "/say_hello/show_article.php?article_id=".$_GET['article_id'];
 }
 else{
    redirect('/say_hello/index.php'); 
@@ -50,11 +50,15 @@ else{
 
     <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
         <div class="article article-content">
-            <h3 style="text-align:center;"><?php echo $title; ?> </h3>
-            <p class="article-ul-li-span"><?php echo $publish_info; ?> </p>
-            <div class="article-content-html"> <?php echo $content; ?></div>
-            <p><a href="<?php echo $edit_article_url; ?>" data-role="button" data-theme="b" data-inline="true" data-icon="edit" data-mini="true" data-shadow="false">编辑</a></p>
-        </div><!-- /article -->
+            <form id="contents" action="update_posted_article.php" method="post">
+                <label for="title">标题:</label>
+                <input type="text" name="title" id="text-basic" value="<?php echo $title; ?>">
+                <label for="content">正文:</label>
+                <textarea name="content" id="content_textarea" style="height:160px;"> <?php echo $content; ?></textarea>
+                <input type="submit" value="保存" data-iconpos="left" data-inline="true" data-icon="check" data-mini="true" data-theme="e">
+                <a href="<?php echo $show_article_url; ?>" data-role="button" data-mini="true" data-icon="delete" data-inline="true">取消</a>
+            </form>
+        </div><!-- /edit article -->
     </div><!-- /content -->
 
     <div data-role="panel" id="left-panel" data-theme="c">

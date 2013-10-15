@@ -94,4 +94,23 @@ function select_articles() {
 
     return $result;
 }
+
+
+function update_article_by_id($id, $title, $content){
+    try{
+        $dbh = getDBHandle();
+        /*** set the error reporting attribute ***/
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->query('set names utf8;');
+        $stmt = $dbh->prepare("update articles set title=:title, content=:content where id=:id");
+        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':title',$title);
+        $stmt->bindParam(':content',$content);
+        $result = $stmt->execute();
+    } 
+    catch(PDOException $e) {
+        echo $e->getMessage();
+    }
+    return $result;
+}
 ?>
