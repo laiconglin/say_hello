@@ -9,6 +9,7 @@ if(isset($_GET['article_id'])){
     $theme = $article['theme'];
     $publish_info = "Post By ".$author." on ".$create_date;
     $show_article_url = "/say_hello/show_article.php?article_id=".$_GET['article_id'];
+    $update_article_url = "/say_hello/update_posted_article.php?article_id=".$_GET['article_id'];
 }
 else{
    redirect('/say_hello/index.php'); 
@@ -50,7 +51,7 @@ else{
 
     <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
         <div class="article article-content">
-            <form id="contents" action="update_posted_article.php" method="post">
+        <form id="contents" action="<?php echo $update_article_url; ?>"  method="post">
                 <label for="title">标题:</label>
                 <input type="text" name="title" id="text-basic" value="<?php echo $title; ?>">
                 <label for="content">正文:</label>

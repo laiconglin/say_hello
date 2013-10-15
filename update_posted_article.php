@@ -25,9 +25,9 @@ $new_publish_info = "Post By ".$author." on ".$date_today;
 if(isset($_POST['content'])) {
     $new_content = $_POST['content'];
     //echo $new_content."<br/>";
-    //$article_id = insert_new_article($new_title, $new_content, $author, $theme);
-    if ($article_id > 0) {
-        redirect("/say_hello/show_article.php?article_id=$article_id");
+    $updated_article_num = update_article_by_id($_GET['article_id'], $new_title, $new_content);
+    if ($updated_article_num == 1) {
+        redirect("/say_hello/show_article.php?article_id=".$_GET['article_id']);
     }
     else {
         echo "error;";
