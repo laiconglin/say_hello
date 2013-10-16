@@ -2,6 +2,7 @@
 require_once('check_login.php');
 require_once('tools.php');
 $new_title = "什么是HTML5？";
+
 //var_dump($_POST);
 if(isset($_POST['title'])) {
     $new_title = $_POST['title'];
@@ -24,9 +25,9 @@ $new_publish_info = "Post By ".$author." on ".$date_today;
 if(isset($_POST['content'])) {
     $new_content = $_POST['content'];
     //echo $new_content."<br/>";
-    $article_id = insert_new_article($new_title, $new_content, $author, $theme);
-    if ($article_id > 0) {
-        redirect("/say_hello/show_article.php?article_id=$article_id");
+    $updated_article_num = update_article_by_id($_GET['article_id'], $new_title, $new_content);
+    if ($updated_article_num == 1) {
+        redirect("/say_hello/show_article.php?article_id=".$_GET['article_id']);
     }
     else {
         echo "error;";
