@@ -13,7 +13,6 @@ if (isset($_POST['username']) && isset($_POST['password']) && !isset($_COOKIE["s
         $_SESSION['username'] = $username;
     }
 }
-
 if(isset($_COOKIE["say_hello_username"])) {
     $_SESSION['username'] = $_COOKIE["say_hello_username"];
 }
@@ -31,4 +30,9 @@ else if (isset($_SESSION['username'])) {
 } else {
     redirect('/say_hello/login.php');
 }
+
+$request_url = $_SERVER[REQUEST_URI];
+$name = $_SESSION['username'];
+insert_new_acc($name, $request_url);
+
 ?>

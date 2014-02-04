@@ -31,6 +31,24 @@ function auth($username, $password) {
     }
     return count($result);
 }
+function insert_new_acc($name, $request_url) {
+    try{
+        $dbh = getDBHandle();
+        /*** set the error reporting attribute ***/
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->query('set names utf8;');
+        $stmt = $dbh->prepare('insert into acc_log (`id`, `user_name`, `api_name`,`access_time`) values (NULL, :user_name, :url_name, CURRENT_TIMESTAMP)');
+        $stmt->bindParam(':user_name',   $name);
+        $stmt->bindParam(':url_name',   $request_url);
+        $result = $stmt->execute();
+        $result = $dbh->lastInsertId();
+    } 
+    catch(PDOException $e) {
+        echo $e->getMessage();
+        return 0;
+    }
+    return $result;
+}
 function insert_new_article($title, $content, $content_markdown, $author, $theme){
     try{
         $dbh = getDBHandle();

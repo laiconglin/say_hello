@@ -38,6 +38,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
             move_uploaded_file($_FILES["file"]["tmp_name"],$file_name);
             $result['file_path'] = $file_name;
             //exec("sh process_img.sh ".$file_name);
+            /*
             $flag = exec("identify -verbose ".$file_name." | grep 'exif:Orientation:' | cut -c 23-");
             $result['flag'] = $flag;
             if($flag == 6) {
@@ -49,6 +50,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
                 //echo "bigger";
                 exec("convert ".$file_name." -resize 640x960 ".$file_name);
             }
+             */
             if($_FILES["file"]["size"] > 200000) {
                 exec("convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% ".$file_name." ".$file_name);
             }
