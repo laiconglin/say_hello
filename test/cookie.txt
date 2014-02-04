@@ -1,0 +1,5 @@
+# Cookies for domains related to hmk-temp.com.
+# This content may be pasted into a cookies.txt file and used by wget
+# Example:  wget -x --load-cookies cookies.txt http://sub0000526603.hmk-temp.com/say_hello/index_pc.php
+#
+sub0000526603.hmk-temp.com  FALSE   /say_hello  FALSE   1385517581.478876   say_hello_username  lai
