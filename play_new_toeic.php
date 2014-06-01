@@ -1,5 +1,5 @@
 <?php
-require_once('check_login.php');
+//require_once('check_login.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,9 +26,9 @@ require_once('check_login.php');
     
     $(document).ready(function(){
         console.log("hello world jqm");
-        var user_name = getCookie("say_hello_username");
-        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
-        $("div#top_user_name").text(user_name);
+        //var user_name = getCookie("say_hello_username");
+        //$("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
+        //$("div#top_user_name").text(user_name);
         //audio.load();
         audio.addEventListener('ended', play_next);
         setTimeout(function(){audio.play();},100);
@@ -71,7 +71,9 @@ require_once('check_login.php');
 <div data-role="page" id="index_page" data-theme="d" data-title="Toeic Listening">
     <div data-role="header" data-theme="c">
         <h2>Toeic Listening</h2>
+        <!--
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
+        -->
     </div><!-- /header -->
     <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
         <?php

@@ -1,5 +1,5 @@
 <?php
-require_once('check_login.php');
+//require_once('check_login.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,9 +25,9 @@ require_once('check_login.php');
     });
     $(document).ready(function(){
         console.log("hello world jqm");
-        var user_name = getCookie("say_hello_username");
-        $("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
-        $("div#top_user_name").text(user_name);
+        //var user_name = getCookie("say_hello_username");
+        //$("img#top_user_thumbnail").attr("src","/say_hello/images/thumbnail_" + user_name + ".png");
+        //$("div#top_user_name").text(user_name);
     });
     </script>
 </head>
@@ -35,10 +35,22 @@ require_once('check_login.php');
 <div data-role="page" id="index_page" data-theme="d" data-title="Toeic Listening">
     <div data-role="header" data-theme="c">
         <h2>Toeic Listening</h2>
+        <!--
         <a href="#left-panel" data-icon="bars" data-iconpos="notext" >Menu</a>
+        -->
     </div><!-- /header -->
     <div data-role="content" style="background:#46463C url(/say_hello/images/bg.png);" >
         <ul data-role='listview' data-inset='true' style='margin:0px;'>
+            <li>
+                <a href="/say_hello/toeic_new_listening.php?book=toeic_speed_01">
+                    <h4>toeic_speed_01</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/say_hello/toeic_new_listening.php?book=toeic_speed_02">
+                    <h4>toeic_speed_02</h4>
+                </a>
+            </li>
             <li>
                 <a href="/say_hello/toeic_new_listening.php?book=toeic_keyword">
                     <h4>toeic keyword</h4>
@@ -82,6 +94,21 @@ require_once('check_login.php');
             <li>
                 <a href="/say_hello/toeic_new_listening.php?book=Toeic_2500">
                     <h4>Toeic_2500</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/say_hello/toeic_new_listening.php?book=Toeic_Official_Textbook_A">
+                    <h4>Toeic_Official_Textbook_A</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/say_hello/toeic_new_listening.php?book=Toeic_Official_Textbook_B">
+                    <h4>Toeic_Official_Textbook_B</h4>
+                </a>
+            </li>
+            <li>
+                <a href="/say_hello/toeic_new_listening.php?book=whaddaya_say_english">
+                    <h4>whaddaya_say_english</h4>
                 </a>
             </li>
         </ul>
