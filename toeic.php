@@ -52,12 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="/say_hello/toeic_new_listening.php?book=toeic_keyword">
-                    <h4>toeic keyword</h4>
-                </a>
-            </li>
-            <li>
-                <a href="/say_hello/toeic_new_listening.php?book=EnglishInterview">
+                <a href="/say_hello/toeic_new_listening.php?book=english_interview">
                     <h4>English Interview</h4>
                 </a>
             </li>
