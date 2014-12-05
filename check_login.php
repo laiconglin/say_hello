@@ -33,6 +33,5 @@ else if (isset($_SESSION['username'])) {
 
 $request_url = $_SERVER[REQUEST_URI];
 $name = $_SESSION['username'];
-insert_new_acc($name, $request_url);
 
 ?>
