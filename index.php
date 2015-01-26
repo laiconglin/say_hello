@@ -1,6 +1,5 @@
 <?php
 require_once('check_login.php');
-checkFileName('/say_hello/index.php');
 $all_articles = select_articles();
 ?>
 <!DOCTYPE html>

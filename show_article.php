@@ -1,7 +1,6 @@
 <?php
 require_once('check_login.php');
 if(isset($_GET['article_id'])){
-    checkFileName('/say_hello/show_article.php?article_id='.$_GET['article_id']);
     $article = select_article_by_id($_GET['article_id']);
     $title = $article['title'];
     $content = $article['content_markdown'];

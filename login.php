@@ -1,6 +1,5 @@
 <?php
 require_once('check_authorized.php');
-checkFileName('/say_hello/login.php');
 ?>
 <html>
 <head>
@@ -42,6 +41,7 @@ checkFileName('/say_hello/login.php');
                 <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
                 <input type="password" data-clear-btn="false" name="password" id="password-1" value="" autocomplete="off">
                 <input type="submit" value="登录" data-iconpos="right" data-mini="true" data-theme="e">
+                <label for="hint">(user:test, pass:test)</label>
             </form>
         </div>
     </div>

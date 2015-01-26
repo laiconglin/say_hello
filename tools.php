@@ -28,19 +28,6 @@ function getDeviceType(){
     $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
     return $deviceType;
 }
-function checkFileName($fileName) {
-    $deviceType = getDeviceType();
-    $url=$fileName;
-    if($deviceType == "computer") {
-        $url = str_replace(".php", "_pc.php",$url);
-        redirect($url);
-    }
-    else if($deviceType == "tablet") {
-        //$url = str_replace(".php", "_tab.php",$url);
-        //redirect($url);
-    }
-}
-
 
 function convert2MarkdownFormat($new_content) {
     $new_content_markdown = $new_content;

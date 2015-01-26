@@ -77,8 +77,9 @@ function select_article_by_id($id) {
         /*** set the error reporting attribute ***/
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $dbh->query('set names utf8;');
-        $stmt = $dbh->prepare("SELECT * FROM articles where id=:id");
-        $stmt->bindParam(':id',$id);
+        $stmt = $dbh->prepare("SELECT * FROM articles where id = :id and author_name = :author_name");
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':author_name', $_SESSION['username']);
         $stmt->execute();
         $all = $stmt->fetchAll();
         $row = $all[0];
@@ -103,7 +104,8 @@ function select_articles() {
         /*** set the error reporting attribute ***/
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $dbh->query('set names utf8;');
-        $stmt = $dbh->prepare("SELECT id, title, author_name, create_time FROM articles order by create_time desc");
+        $stmt = $dbh->prepare("SELECT id, title, author_name, create_time FROM articles where author_name = :author_name order by create_time desc");
+        $stmt->bindParam(':author_name', $_SESSION['username']);
         $stmt->execute();
         $result = $stmt->fetchAll();
     } 
