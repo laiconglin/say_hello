@@ -9,7 +9,7 @@ $all_articles = select_articles();
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="apple-touch-icon" href="/say_hello/images/pingpingguanguan.png">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    <script src="jquery.min.js">
     </script>
     <script src="utils.js"></script>
     <link rel="stylesheet" href="css/style.css" />
