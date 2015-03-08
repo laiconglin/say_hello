@@ -69,7 +69,6 @@ $all_articles = select_articles();
             <li><a href="#" data-rel="close"><img id="top_user_thumbnail" /><div id="top_user_name" style="font-size:40px;text-align:center;vertical-align:middle;"></div></a></li>
             <li><a href="#" data-rel="close">首页</a></li>
             <li><a href="/say_hello/write_something.php">写点东西</a></li>
-            <li><a href="/say_hello/toeic.php">Toeic</a></li>
             <li><a href="/say_hello/logout.php">退出</a></li>
         </ul>
     </div><!-- /panel -->
