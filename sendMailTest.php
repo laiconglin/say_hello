@@ -15,7 +15,7 @@ $mail->Encoding = '7bit';       // SMS uses 7-bit encoding
   
 // Authentication  
 $mail->Username   = "laiconglin3@gmail.com"; // Login  
-$mail->Password   = "lcl123456"; // Password  
+$mail->Password   = "123456"; // Password  
   
 // Compose  
 $mail->Subject = "人鬼白痴情报";     // Subject (which isn't required)  
